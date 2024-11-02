@@ -5,7 +5,7 @@ from aiogram.dispatcher import FSMContext
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 import asyncio
 
-api = ""
+api = "7712368295:AAFD63GdJ-gjE5DZQxokyVu9M6VSzSCidTE"
 bot = Bot(token= api)
 dp = Dispatcher(bot, storage= MemoryStorage())
 
@@ -49,9 +49,9 @@ async def send_calories(message, state):
     data = await state.get_data()
     # 10 x вес (кг) + 6,25 x рост (см) – 5 x возраст (г) – 161
     # (10 x вес (кг) + 6.25 x рост (см) – 5 x возраст (г) + 5) x A
-    colories = round(10 * int(data['weight']) + 6,25 * int(data['growth']) - 5 * int(data['age']) - 161)
-    #colories = round(10 * int(data['weight']) + 6, 25 * int(data['growth']) - 5 * int(data['age']) + 5)
-    await message.answer(f'Ваша норма коллорий: {colories}')
+    colories = round(10 * int(data['weight']) + 6.25 * int(data['growth']) - 5 * int(data['age']) - 161)
+    #colories = round(10 * int(data['weight']) + 6.25 * int(data['growth']) - 5 * int(data['age']) + 5)
+    await message.answer(f'Ваша норма каллорий: {colories}')
     await state.finish()
 
 if __name__ == "__main__":
